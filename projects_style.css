@@ -7,7 +7,7 @@
 .container{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/1.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(assets/2.jpg);
     position: relative;
     background-size: cover;
     overflow: hidden;
@@ -16,9 +16,15 @@
 .logo{
     position: relative;
     font-size: 30px;
+    font-weight: 600;
     text-decoration: none;
-    color: white;
-    font-weight: 700;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3.3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(240, 23, 23, 0);
 }
 
 nav{
@@ -43,7 +49,7 @@ nav{
 }
 
 .navbar a:hover, .navbar a.active{
-    color: rgb(55, 128, 128);
+    color: rgb(119, 124, 124);
 }
 
 nav .bx{
@@ -99,6 +105,15 @@ nav .bx{
     }
 }
 
+@keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+
 /* Project */
 
 .projects{
@@ -124,31 +139,53 @@ p{
     display: flex;
     justify-content: space-between;
     color: white;
+    flex-direction: column;
 }
 
 .box{
-    flex-basis: 31%;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
-    box-sizing: border-box;
+    /* background-color: #081b29; */
 }
 
 .box img{
     width: 100%;
+    max-width: 200px;
     border-radius: 10px;
+    margin-right: 40px;
+    float: left;
 }
 
-.box h3{
-    margin-top: 16px;
+.box h3, .box h4, .box p, .box a, .box .spans{
+    display: block;
+    text-align: left;
+}
+
+.box a{
+    bottom: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.box a:hover{
+    color: rgb(55, 128, 128);
+    
+}
+
+
+
+.box h4{
     margin-bottom: 15px;
     text-align: left;
+    color: rgb(181, 181, 181);
 }
 
 .box p{
     padding: 0;
+    margin-bottom: 40px;
 }
 
-.box:hover{
+.box img:hover{
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.2);
 }
